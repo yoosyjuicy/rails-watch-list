@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_06_070431) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_11_115319) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,12 +31,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_06_070431) do
   end
 
   create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.text "overview"
+    t.string "poster_url"
+    t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "poster_url"
-    t.string "title"
-    t.string "overview"
-    t.integer "rating"
   end
 
   add_foreign_key "bookmarks", "lists"
